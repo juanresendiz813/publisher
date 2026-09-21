@@ -94,8 +94,10 @@ npm create @malloy-publisher/malloy-package@latest sales -- --data ./orders.csv
 ```
 
 CSV, Parquet, JSON, newline-delimited JSON, or Excel `.xlsx` — DuckDB reads all of them in place. The
-`--` is required, and the path is relative to where you run the command. A seeded package starts
-small: a row count and an overview, which is the moment to point an agent at it.
+`--` is required, and the path is relative to where you run the command. A seeded CSV, JSON or
+newline-delimited JSON package starts from that file's own columns, with the profile it was built from
+written into the model as a comment; Parquet and `.xlsx` are binary and are not read, so those start
+small, at a row count and an overview. Either way that is the moment to point an agent at it.
 
 ### Connect a database
 
